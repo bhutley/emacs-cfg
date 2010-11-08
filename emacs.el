@@ -250,16 +250,6 @@
     (progn
       (setq explicit-shell-file-name "/bin/bash")
       (setq shell-file-name "/bin/bash")
-
-;;      (let ((cmd-line "/bin/bash")
-;;            (bashrc-file (concat (getenv "HOME") "/.bashrc"))
-;;            )
-;;        (if (file-exists-p bashrc-file)
-;;            (setq cmd-line (concat cmd-line " --rcfile " bashrc-file))
-;;          )
-;;
-;;        (setq shell-file-name cmd-line)
-;;        )
       )
   (progn
       (setq explicit-shell-file-name "c:\\cygwin\\bin\\bash.exe")
@@ -885,12 +875,12 @@ If `nil', or the file doesn't exists - don't record the task activity.")
                ("CANCELLED" :foreground "black" :strike-through "red" :weight bold)
                )))
 
-(require 'actionscript-mode)
-
-(require 'ruby-mode)
-(setq auto-mode-alist (cons '("\\.rb$" . ruby-mode) auto-mode-alist))
-(setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
-
+;(require 'actionscript-mode)
+;
+;(require 'ruby-mode)
+;(setq auto-mode-alist (cons '("\\.rb$" . ruby-mode) auto-mode-alist))
+;(setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
+;
 
 ;; todo stuff...
 (require 'calendar)
@@ -1054,8 +1044,8 @@ If `nil', or the file doesn't exists - don't record the task activity.")
   (add-hook 'kill-buffer-hook 'bh-delete-temp-note)
   )
 
-(setq load-path (cons (concat bh-emacs-cfg-path "/rhtml") load-path))
-(require 'rhtml-mode)
+;(setq load-path (cons (concat bh-emacs-cfg-path "/rhtml") load-path))
+;(require 'rhtml-mode)
 ;(add-hook 'rhtml-mode-hook
   ;(lambda () (rinari-launch)))
 ;(require 'snippet)
@@ -1064,4 +1054,5 @@ If `nil', or the file doesn't exists - don't record the task activity.")
 ;(require 'rails)
 
 ;(load (concat bh-emacs-cfg-path "/nxhtml/autostart22.el"))
+
 
