@@ -6,7 +6,7 @@
 (defvar bh-diary-dir (expand-file-name "~/diary"))
 
 ;; set the load path for emacs lisp files
-(nconc load-path (list bh-emacs-cfg-path))
+(nconc load-path (list bh-emacs-cfg-path "/usr/local/share/emacs/site-lisp"))
 
 (nconc exec-path (list "/usr/local/bin" "/sw/bin" "/opt/local/bin/"))
 
@@ -1055,4 +1055,4 @@ If `nil', or the file doesn't exists - don't record the task activity.")
 
 ;(load (concat bh-emacs-cfg-path "/nxhtml/autostart22.el"))
 
-
+(load "magit")
