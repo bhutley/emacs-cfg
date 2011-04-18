@@ -723,12 +723,13 @@ If `nil', or the file doesn't exists - don't record the task activity.")
 ;; the Rememberance Agent.
 ; The default is OK for me.
 ; (setq remem-prog-dir <prog-dir-string>)
-(setq bh-remem-index-file (expand-file-name "~/.ra-indexes"))
+(setq bh-remem-index-file (expand-file-name "~/.ra-index"))
 (if (file-exists-p bh-remem-index-file)
     (progn
-      (setq remem-database-dir bh-remem-index-file)
-      (setq remem-scopes-list '(("my-docs" 6 10 500)))
       (load "remem.el")
+      (setq remem-database-dir bh-remem-index-file)
+      (setq remem-scopes-list '(("MyBooks" 6 10 10)))
+      (message "Remembrance Agent Initialized")
       )
   )
 
@@ -1056,3 +1057,19 @@ If `nil', or the file doesn't exists - don't record the task activity.")
 ;(load (concat bh-emacs-cfg-path "/nxhtml/autostart22.el"))
 
 (load "magit")
+
+(setq bh-thesaurus "~/my/doc/thesaurus/mthesaur.txt")
+(if (file-exists-p bh-thesaurus)
+    (progn
+      (setq synonyms-file (expand-file-name bh-thesaurus))
+      (setq synonyms-cache-file (expand-file-name (concat bh-thesaurus ".cache")))
+      (require 'synonyms)
+      (global-set-key (kbd "C-z s") 'synonyms)
+      )
+  )
+
+(setq org-log-done 'time)
+(setq org-agenda-include-diary t)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
